@@ -1,0 +1,52 @@
+﻿@model List<Personel>
+
+@{
+    ViewData["Title"] = "BirimDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<h4>@ViewBag.BirimAd</h4>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Ad
+            </th>
+            <th>
+                Soyad
+            </th>
+            <th>
+                Sehir
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+
+                <td>
+                    @x.PersonelID
+                </td>
+                <td>
+                    @x.Ad
+                </td>
+                <td>
+                    @x.Soyad
+                </td>
+                <td>
+                    @x.Sehir
+                </td>
+                <!--<th>-->
+                @*@x.Birim.BirimAd*@
+                <!--</th>-->
+            </tr>
+
+        }
+    </tbody>
+</table>
+

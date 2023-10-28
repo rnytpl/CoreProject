@@ -1,0 +1,27 @@
+﻿@model CoreProject.Models.Personel;
+
+@{
+    ViewData["Title"] = "YeniPersonel";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("YeniPersonel", "Personel", FormMethod.Post))
+{
+    <br />
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Soyad)
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Sehir)
+    @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Birim.BirimAd)
+    // Selected model property will be bound to the selected value from dropdown list
+    // The source of options will come from ViewBag.dgr and converted into a list form of SelectListItem type
+    @Html.DropDownListFor(x => x.Birim.BirimID, (List<SelectListItem>)ViewBag.dgr, new {@class= "form-control" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+}
+

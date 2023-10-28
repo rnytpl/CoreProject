@@ -1,0 +1,21 @@
+﻿@model CoreProject.Models.Personel;
+@{
+    ViewData["Title"] = "PersonelGüncelle";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGüncelle", "Personel", FormMethod.Post))
+{
+    <br />
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad)
+    <br />
+    @Html.LabelFor(x => x.Soyad)
+    @Html.TextBoxFor(x => x.Soyad)
+    <br />
+    @Html.LabelFor(x => x.Sehir)
+    @Html.TextBoxFor(x => x.Sehir)
+    <br />
+    @Html.LabelFor(x=> x.Birim.BirimAd)
+    @*@Html.TextBoxFor()*@
+}

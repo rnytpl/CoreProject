@@ -1,0 +1,35 @@
+﻿@using CoreProject.Models;
+@model List<Birim>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Departman</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.BirimID</td>
+                <td>@x.BirimAd</td>
+                <td>@Html.ActionLink("Sil", "BirimSil", new { ID = x.BirimID }, new { @class = "btn btn-danger" })</td>
+                <td>@Html.ActionLink("Güncelle", "BirimGetir", new { ID = x.BirimID }, new { @class = "btn btn-info" })</td>
+                <td>
+                    @Html.ActionLink("Detaylar", "BirimDetay", "Birim", new { ID = x.BirimID}, new {@class = "btn btn-primary"} )
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/birim/yenibirim" class="btn btn-info">Yeni Birim</a>

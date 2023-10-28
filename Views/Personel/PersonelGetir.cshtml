@@ -1,0 +1,28 @@
+﻿@model CoreProject.Models.Personel
+@{
+    ViewData["Title"] = "PersonelGetir";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGüncelle", "Personel", FormMethod.Post))
+{
+    <br />
+    @Html.LabelFor(x => x.PersonelID)
+    @Html.TextBoxFor(x => x.PersonelID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Soyad)
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Sehir)
+    @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+    <br />
+    @Html.DropDownListFor(x => x.Birim.BirimID, (List<SelectListItem>)ViewBag.birims, new { @class = "form-control" })
+    <br />
+    <button type="submit">Güncelle</button>
+}
+
+
+
